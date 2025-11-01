@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인터랙티브 그림자극: 빨간색 마커 트래킹</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <button class="export-button">영상 내보내기</button>
+    </header>
+
+    <div class="app-main">
+        <aside class="asset-panel">
+            <div class="asset-container">
+                <div id="decorations" class="asset-list" style="display: grid;">
+                    <img src="img/사각형.png" class="asset-item" data-type="decoration">
+                    <img src="img/나비.png" class="asset-item" data-type="decoration">
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="canvas-wrapper">
+                <div id="canvas">
+                    <div id="shadowCharacter" class="decoration-item" data-is-animatable="true"></div>
+                </div>
+            </div>
+            
+            <div class="animation-controls">
+                <button id="play-animation" class="export-button" disabled>웹캠 준비 중...</button>
+                <div id="statusMessage" style="margin-left: 15px; color: var(--color-gray); font-weight: bold;"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-strip">
+                    <div class="scene active" data-scene="1"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="2"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="3"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="4"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="5"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="6"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="7"></div><span class="arrow">→</span>
+                    <div class="scene" data-scene="8"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <video id="webcamFeed" autoplay playsinline style="display: none;"></video>
+    <canvas id="trackingCanvas" style="display: none;"></canvas>
+
+    <script src="script3.js"></script>
+</body>
+</html>
